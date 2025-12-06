@@ -2,9 +2,7 @@ using System;
 
 namespace BibliothequeDigitale
 {
-    /// <summary>
-    /// Concrete class representing a Book (Livre) document
-    /// </summary>
+    
     public class Livre : Document
     {
         public int NombrePages { get; set; }
@@ -27,4 +25,5 @@ namespace BibliothequeDigitale
         }
     }
 }
+
 
