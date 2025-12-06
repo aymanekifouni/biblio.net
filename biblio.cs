@@ -5,9 +5,7 @@ using System.Linq;
 
 namespace BibliothequeDigitale
 {
-    /// <summary>
-    /// Class managing a collection of documents with save/load functionality
-    /// </summary>
+    
     public class Bibliotheque
     {
         private List<Document> documents;
@@ -17,9 +15,7 @@ namespace BibliothequeDigitale
             documents = new List<Document>();
         }
 
-        /// <summary>
-        /// Adds a document to the library
-        /// </summary>
+       
         public void AjouterDocument(Document d)
         {
             if (d == null)
@@ -28,10 +24,7 @@ namespace BibliothequeDigitale
             documents.Add(d);
         }
 
-        /// <summary>
-        /// Removes a document by its ID
-        /// Throws DocumentNonTrouveException if document not found
-        /// </summary>
+        
         public void SupprimerDocument(Guid id)
         {
             var document = documents.FirstOrDefault(d => d.Id == id);
@@ -43,10 +36,7 @@ namespace BibliothequeDigitale
             documents.Remove(document);
         }
 
-        /// <summary>
-        /// Searches for documents by keyword in Title or Author
-        /// Throws DocumentNonTrouveException if no documents found
-        /// </summary>
+        
         public List<Document> Rechercher(string motCle)
         {
             if (string.IsNullOrWhiteSpace(motCle))
@@ -65,9 +55,7 @@ namespace BibliothequeDigitale
             return resultats;
         }
 
-        /// <summary>
-        /// Displays all documents in the library
-        /// </summary>
+        
         public void AfficherTous()
         {
             if (documents.Count == 0)
@@ -84,10 +72,7 @@ namespace BibliothequeDigitale
             }
         }
 
-        /// <summary>
-        /// Saves all documents to a CSV file
-        /// Uses FileStream and StreamWriter with proper resource cleanup
-        /// </summary>
+        
         public void Sauvegarder(string cheminFichier)
         {
             if (string.IsNullOrWhiteSpace(cheminFichier))
@@ -119,11 +104,7 @@ namespace BibliothequeDigitale
             }
         }
 
-        /// <summary>
-        /// Loads documents from a CSV file
-        /// Reads line by line and reconstructs the correct Document objects
-        /// Uses proper resource cleanup
-        /// </summary>
+        
         public void Charger(string cheminFichier)
         {
             if (string.IsNullOrWhiteSpace(cheminFichier))
@@ -168,12 +149,12 @@ namespace BibliothequeDigitale
                     }
                 }
 
-                // Replace existing documents with loaded ones
+            
                 documents = documentsCharges;
             }
             catch (FileNotFoundException)
             {
-                throw; // Re-throw FileNotFoundException as-is
+                throw; 
             }
             catch (DirectoryNotFoundException ex)
             {
@@ -189,10 +170,7 @@ namespace BibliothequeDigitale
             }
         }
 
-        /// <summary>
-        /// Serializes a Document to CSV format
-        /// First column indicates document type
-        /// </summary>
+       
         private string SerializeDocument(Document doc)
         {
             if (doc is Livre livre)
@@ -213,9 +191,7 @@ namespace BibliothequeDigitale
             }
         }
 
-        /// <summary>
-        /// Deserializes a CSV line to a Document object
-        /// </summary>
+      
         private Document? DeserializeDocument(string ligne)
         {
             if (string.IsNullOrWhiteSpace(ligne))
@@ -271,4 +247,5 @@ namespace BibliothequeDigitale
         }
     }
 }
+
 
