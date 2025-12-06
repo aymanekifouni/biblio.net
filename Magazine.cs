@@ -2,9 +2,7 @@ using System;
 
 namespace BibliothequeDigitale
 {
-    /// <summary>
-    /// Concrete class representing a Magazine document
-    /// </summary>
+  
     public class Magazine : Document
     {
         public int Numero { get; set; }
@@ -27,4 +25,5 @@ namespace BibliothequeDigitale
         }
     }
 }
+
 
