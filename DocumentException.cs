@@ -2,9 +2,7 @@ using System;
 
 namespace BibliothequeDigitale
 {
-    /// <summary>
-    /// Custom exception thrown when a document cannot be found
-    /// </summary>
+ 
     public class DocumentNonTrouveException : Exception
     {
         public DocumentNonTrouveException() : base("Le document n'a pas été trouvé.")
@@ -21,4 +19,5 @@ namespace BibliothequeDigitale
         }
     }
 }
+
 
