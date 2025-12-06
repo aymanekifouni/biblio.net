@@ -303,25 +303,26 @@ namespace BibliothequeDigitale
             }
             catch (FileNotFoundException)
             {
-                throw; // Re-throw to be handled by Main
+                throw; 
             }
             catch (FormatException)
             {
-                throw; // Re-throw to be handled by Main
+                throw; 
             }
             catch (IOException)
             {
-                throw; // Re-throw to be handled by Main
+                throw; 
             }
             catch (ArgumentException)
             {
-                throw; // Re-throw to be handled by Main
+                throw; 
             }
             catch (Exception)
             {
-                throw; // Re-throw to be handled by Main
+                throw; 
             }
         }
     }
 }
+
 
