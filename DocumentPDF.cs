@@ -2,9 +2,7 @@ using System;
 
 namespace BibliothequeDigitale
 {
-    /// <summary>
-    /// Concrete class representing a PDF document
-    /// </summary>
+   
     public class DocumentPDF : Document
     {
         public double TailleEnMo { get; set; }
@@ -27,4 +25,5 @@ namespace BibliothequeDigitale
         }
     }
 }
+
 
